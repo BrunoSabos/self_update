@@ -278,7 +278,7 @@ fn api_headers(auth_token: &Option<String>) -> header::HeaderMap {
     if auth_token.is_some() {
         headers.insert(
             header::AUTHORIZATION,
-            (String::from("token ") + &auth_token.clone().unwrap())
+            (String::from("Bearer ") + &auth_token.clone().unwrap())
                 .parse()
                 .unwrap(),
         );
